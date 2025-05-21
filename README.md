@@ -1,0 +1,144 @@
+# 💳 Gastos no Cartão de Crédito por Categoria
+
+Projeto em fase de desenvolvimento com o objetivo de criar uma aplicação web que permite aos usuários fazer login via **OAuth2 no Mercado Pago** e gerar **relatórios de gastos no cartão de crédito**, incluindo:
+
+- Comparativos **Ano a Ano (Y/Y)** e **Mês a Mês (MoM)**
+- Gráficos interativos por categoria de gasto
+- Insights financeiros personalizados
+
+---
+
+## ✅ Funcionalidades já implementadas
+
+- Página inicial com:
+  - Imagem de fundo
+  - Cabeçalho
+  - Campo de login (simples, sem lógica funcional ainda)
+
+---
+
+## ⚙️ Tecnologias e Dependências
+
+### Frontend
+- [Vite](https://vitejs.dev/) + React (JavaScript)
+
+### Backend
+- Node.js (Express)
+- `dotenv` para variáveis de ambiente
+- `cors`, `crypto`, `node-fetch` para futura integração com APIs
+
+---
+
+## 🛠️ Como rodar o projeto localmente
+
+> ⚠️ O backend ainda está em desenvolvimento. Os comandos abaixo configuram o ambiente completo.
+
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/seu-usuario/wallet-flow.git
+cd wallet-flow
+```
+
+### 2. Instalar as dependências do frontend
+```bash
+cd frontend
+npm install
+```
+### 3. Instalar as dependências do backend
+```bash
+cd ../backend
+npm init -y
+npm install express dotenv node-fetch cors crypto
+```
+
+### 4. Clonar o .env do backend
+```bash
+cp .env.example .env
+```
+
+### 5. Rodar o frontend
+```bash
+cd ../frontend
+npm run dev
+```
+---
+
+## Estrutura de Pastas
+
+```
+wallet-flow/
+│
+├── backend/
+│   ├── node_modules/
+│   ├── server/
+│   │   └─ index.js
+│   ├── .env
+│   ├── .env.example
+│   ├── package-lock.json
+│   └── package.json
+│
+├── frontend/             
+│   ├── node_modules/
+│   ├── src/
+│   │   ├─ assets/
+│   │   │  ├─ carta-de-credito-control.jpg
+│   │   │  ├─ logo.png
+│   │   │  ├─ mercado-pago.png
+│   │   │  └─ transacoes_ficticias.csv
+│   │   │
+│   │   ├─ components/
+│   │   │  ├─ Header.jsx
+│   │   │  ├─ Login.jsx
+│   │   │  └─ Main.jsx
+│   │   │
+│   │   ├─ pages/
+│   │   │  ├─ Dashboard.jsx
+│   │   │  └─ Home.jsx
+│   │   │
+│   │   ├─ utils/
+│   │   │  └─ utils.js
+│   │   │
+│   │   ├─ App.jsx
+│   │   ├─ index.css
+│   │   └─ main.jsx
+│   │
+│   ├── .env
+│   ├── .gitignore
+│   ├── .eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   └── vite.config.js
+│
+├── package-lock.json 
+└── README.md
+
+```
+
+---
+
+## 🧠 Melhorias Futuras
+
+- 🔐 Autenticação via OAuth2 (inicialmente com Mercado Pago)
+- 🏦 Integração com múltiplos bancos
+- 📊 Dashboard completo com gráficos dinâmicos (D3.js, Chart.js ou Recharts)
+- 🤖 Aplicação de Machine Learning para prever e classificar gastos
+- 🌐 Publicação em domínio gratuito para acesso público
+
+## 🙋‍♂️ Author
+
+- Criado por Bruno Felipe Passareli, com apoio do ChatGPT.
+- Objetivo: aprimorar habilidades em engenharia de prompt, full stack web development e APIs financeiras.
+
+---
+
+## 🤝 Contribuições
+Sinta-se à vontade para:
+- Fazer um fork do projeto
+- Criar pull requests
+- Reportar bugs ou sugerir melhorias
+Se achou útil, deixe uma ⭐ no repositório!
+
+---
+
+Sinta-se livre para contribuir ou deixar uma ⭐ se achou útil!

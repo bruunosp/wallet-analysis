@@ -1,0 +1,119 @@
+:root{
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100svh;
+}
+
+/* Reset */
+/* Seletor Universal */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+#root {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+/* -------------------------------------------------------------- */
+/* Header */
+.header {
+  height: 70px;
+  background: linear-gradient(to right, #000000, #222222);
+  color: white;
+  font-size: 50px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------- */
+/* Imagem de fundo - Tela inicial */
+.main-page__image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 70px);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.main-page__image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* esmaecimento */
+  z-index: ;
+}
+
+.main-page__image > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* -------------------------------------------------------------- */
+/* Login component */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #4b4848;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
