@@ -8,7 +8,7 @@ const Main = () => {
       style={{ backgroundImage: `url(${imgFundo})` }}
     >
       <h1>Controle seus Gastos</h1>
-      <p>Visualize, entenda e economize com seus cartões</p>
+      <p className="main-page__text">Visualize, entenda e economize com seus cartões</p>
       
       <Login />
     </div>

@@ -5,7 +5,7 @@ const Header = () => {
     <div className='header'>
       <a href='/'>
         <h1>
-          Wallet Analyses - Credit Card
+          Wallet Analysis - Credit Card
         </h1>
       </a>
 

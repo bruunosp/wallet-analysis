@@ -21,6 +21,8 @@ Projeto em fase de desenvolvimento com o objetivo de criar uma aplicação web q
 
 ### Frontend
 - [Vite](https://vitejs.dev/) + React (JavaScript)
+- [React Router Dom](https://reactrouter.com/)
+
 
 ### Backend
 - Node.js (Express)
@@ -43,7 +45,9 @@ cd wallet-flow
 ```bash
 cd frontend
 npm install
+npm install react-router-dom
 ```
+
 ### 3. Instalar as dependências do backend
 ```bash
 cd ../backend
