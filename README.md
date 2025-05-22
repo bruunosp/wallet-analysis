@@ -13,7 +13,12 @@ Projeto em fase de desenvolvimento com o objetivo de criar uma aplicação web q
 - Página inicial com:
   - Imagem de fundo
   - Cabeçalho
-  - Campo de login (simples, sem lógica funcional ainda)
+  - Campo de login (simples, armazena variável do nome do usuário)
+
+- Página principal do dashboard:
+  - Da as boas vindas para o usuário
+  - Altera a imagem de fundo
+  - Sobe o texto de boas vindas para o canto superior esquerdo
 
 ---
 
@@ -85,15 +90,22 @@ wallet-flow/
 │   ├── node_modules/
 │   ├── src/
 │   │   ├─ assets/
-│   │   │  ├─ carta-de-credito-control.jpg
-│   │   │  ├─ logo.png
-│   │   │  ├─ mercado-pago.png
-│   │   │  └─ transacoes_ficticias.csv
+│   │   │  ├─ database/
+│   │   │  │  └─ transacoes_ficticias.csv
+│   │   │  │
+│   │   │  └─ images/
+│   │   │     ├─ bg-financas.jpg
+│   │   │     ├─ carta-de-credito-control.jpg
+│   │   │     ├─ logo.png
+│   │   │     └─ mercado-pago.png
 │   │   │
 │   │   ├─ components/
 │   │   │  ├─ Header.jsx
 │   │   │  ├─ Login.jsx
 │   │   │  └─ Main.jsx
+│   │   │
+│   │   ├─ context/
+│   │   │  └─ UserContext.jsx
 │   │   │
 │   │   ├─ pages/
 │   │   │  ├─ Dashboard.jsx

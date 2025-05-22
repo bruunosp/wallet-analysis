@@ -1,4 +1,4 @@
-import imgFundo from "../assets/cartao-de-credito-control.jpg";
+import imgFundo from "../assets/images/cartao-de-credito-control.jpg";
 import Login from "./Login";
 
 const Main = () => {
