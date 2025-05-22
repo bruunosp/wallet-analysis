@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault();
     if (inputName.trim() !== "") {
       setUsername(inputName);
-      navigate("/dashboard");
+      navigate("/welcome");
     }
   };
 
@@ -20,11 +20,11 @@ const Login = () => {
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
+          className="login-input"
           type="text"
           placeholder="Digite seu nome"
           value={inputName}
           onChange={(e) => setInputName(e.target.value)}
-          className="login-input"
         />
         <button type="submit" className="login-button">
           Entrar

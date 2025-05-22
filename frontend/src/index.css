@@ -23,68 +23,43 @@
 }
 
 /* -------------------------------------------------------------- */
-/* Header */
-.header {
-  height: 70px;
-  background: linear-gradient(to right, #000000, #222222);
-  color: white;
-  font-size: 50px;
-  padding: 16px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
+/* Todos os Overlays::After */
 
-.header a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.header a:hover {
-  text-decoration: underline;
-}
-
-/* -------------------------------------------------------------- */
-/* Imagem de fundo - Tela inicial */
-.main-page__image {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: calc(100vh - 70px);
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-}
-
-.main-page__image::after {
-  content: "";
+/* Overlay claro */
+.overlay--claro::after {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.75); /* esmaecimento */
   z-index: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 1.2s ease-in-out;
 }
 
-.main-page__image > * {
-  position: relative;
-  z-index: 1;
+/* Overlay medio */
+.overlay--medio::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: background-color 1.2s ease-in-out;
 }
 
-.main-page__text{
-  margin-top: 10px;
+/* Overlay escuro */
+.overlay--escuro::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  transition: background-color 1.2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.95);
 }
-
 /* -------------------------------------------------------------- */
 /* Login component */
 .login-box {
@@ -121,63 +96,102 @@
   background-color: #0056b3;
 }
 
+/* -------------------------------------------------------------- */
+/* Header */
+.header {
+  height: 70px;
+  background: linear-gradient(to right, #000000, #222222);
+  color: white;
+  font-size: 50px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
 
 /* -------------------------------------------------------------- */
-/* Dashboard - Tela de boas vindas */
-/* Estrutura do container da dashboard */
-.dashboard__image {
+/* Imagem de fundo - Tela inicial */
+.main-page__image {
+  height: calc(100vh - 70px);
+  width: 100vw;
   position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.main-page__image::after {
+  content: "";
+}
+
+.main-page__image > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* -------------------------------------------------------------- */
+/* Welcome - Tela de boas vindas */
+.welcome-screen {
+  position: relative;
+  height: calc(100vh - 70px); /* Desconsiderando o tamanho do .header*/
   width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: background-image 1.5s ease-in-out;
+  color: white;
+  /* transition: background-image 1.5s ease-in-out; */
 }
 
-/* Overlays com opacidade variável */
-.dashboard__image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-  transition: background-color 1.5s ease-in-out;
+.welcome-screen::after {
+  content:"";
 }
 
-/* Classes controladoras do nível de esmaecimento */
-.overlay-escuro::after {
-  background-color: rgba(0, 0, 0, 0.95);
-}
-
-.overlay-claro::after {
-  background-color: rgba(0, 0, 0, 0.30);
-}
-
-/* Texto centralizado inicialmente */
-.dashboard__text {
-  position: absolute;
+.welcome-screen > * {
+  position: relative;
   z-index: 1;
+}
+
+
+.welcome-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
   font-size: 2rem;
   color: white;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  top: 50%;
-  left: 50%;
+  z-index: 1;
   transform: translate(-50%, -50%);
   transition: all 1.2s ease-in-out;
 }
 
-/* Animação do texto para canto superior esquerdo */
-.dashboard__text--move {
+/* Anima o texto para canto superior após login */
+.welcome-text.move {
   top: 20px;
   left: 30px;
-  right: auto;
   transform: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
