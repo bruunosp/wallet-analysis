@@ -120,3 +120,87 @@
 .login-button:hover {
   background-color: #0056b3;
 }
+
+
+/* -------------------------------------------------------------- */
+/* Dashboard - Tela de boas vindas */
+.dashboard-lenghts__text{
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  position: absolute;
+  transition: all 1.2s ease-in-out;
+}
+
+/* CORRIGIR POSICIONAMENTO */
+.dashboard-lenghts__move{
+  transform: translate(-815px, -400px);
+  font-size: 1.5rem;
+}
+
+.dashboad-lengths__image{
+
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 70px);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  transition: background-image 1.5s ease-in-out;
+}
+
+.dashboad-lengths__image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95); /* esmaecimento */
+  z-index: 0;
+}
+
+.dashboad-lengths__image > * {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 70px);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  transition: background-image 1.5s ease-in-out;  
+}
+
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.30); /* esmaecimento */
+  z-index: 0;
+}
+
+.animated-bg > * {
+  position: relative;
+  z-index: 1;
+}
