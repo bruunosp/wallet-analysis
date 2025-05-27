@@ -8,6 +8,15 @@ Projeto em fase de desenvolvimento com o objetivo de criar uma aplicação web q
 
 ---
 
+## 🆕 Atualizações mais recentes
+
+- Criado a [base de dados](./backend/data/mockTransactions.json) mockada no site [Mokaroo](https://mockaroo.com/)
+- Criado uma conexão API no backend [Server](./backend/routes/transactions.js)
+- Consumindo a [API](./frontend//src/services/transactionsAPI.js) no frontend
+- Adicionado visualizações de Resumo Geral, Gráfico de Gastos por Mês e Transações recentes na página principal (dashboard)
+
+---
+
 ## ✅ Funcionalidades já implementadas
 
 - Página inicial com:
@@ -19,6 +28,7 @@ Projeto em fase de desenvolvimento com o objetivo de criar uma aplicação web q
   - Da as boas vindas para o usuário
   - Altera a imagem de fundo
   - Sobe o texto de boas vindas para o canto superior esquerdo
+  - Apresenta o Resumo Geral, Gráfico de Gastos por Mês e as Transações Recentes
 
 ---
 
@@ -51,6 +61,7 @@ cd wallet-flow
 cd frontend
 npm install
 npm install react-router-dom
+npm install recharts
 ```
 
 ### 3. Instalar as dependências do backend
@@ -69,6 +80,12 @@ cp .env.example .env
 ```bash
 cd ../frontend
 npm run dev
+```
+
+### 6. Rodar o backend
+```bash
+cd ../backend
+node ./server/server.js
 ```
 ---
 
