@@ -5,7 +5,7 @@ import transactionsRoute from '../routes/transactions.js';
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+app.use(cors());          // Essencial para o frontend acessar a API
 app.use(express.json());
 
 app.use('/api/transactions', transactionsRoute);

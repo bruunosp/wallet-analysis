@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Login from "./Login";
 import imgFundo from "../assets/images/cartao-de-credito-control.jpg";
 

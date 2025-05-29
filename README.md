@@ -10,10 +10,28 @@ Projeto em fase de desenvolvimento com o objetivo de criar uma aplicação web q
 
 ## 🆕 Atualizações mais recentes
 
-- Criado a [base de dados](./backend/data/mockTransactions.json) mockada no site [Mokaroo](https://mockaroo.com/)
+### Atualizações no Front-end: Refatoração do Dashboard
+- Esta atualização foca na melhoria da arquitetura do front-end, especificamente na página do Dashboard. Anteriormente, o componente `DashboardContent.jsx` era responsável por buscar os dados da API e gerenciar o estado. Agora, refatoramos essa lógica para tornar o código mais modular e manutenível:
+
+- Página `Dashboard.jsx`: Assumiu a responsabilidade principal de interagir com a API, buscar os dados das transações e o total financeiro, e gerenciar as constantes de estado. 
+- Componente `DashboardContent.jsx`: Sua função foi redefinida para atuar como um orquestrador visual. Ele agora recebe as **transactions** e o **totalAmount** como propriedades e as distribui para componentes filhos especializados (TotalSummary, MonthlyChart, RecentTransactions), que se encarregam de apresentar os dados de forma organizada.
+- Essa separação de responsabilidades melhora a clareza do código, facilita a manutenção e o desenvolvimento de novas funcionalidades, e otimiza a reutilização de componentes.
+
+- Criado a [Base de Dados](./backend/data/mockTransactions.json) mockada no site [Mokaroo](https://mockaroo.com/)
 - Criado uma conexão API no backend [Server](./backend/routes/transactions.js)
 - Consumindo a [API](./frontend//src/services/transactionsAPI.js) no frontend
 - Adicionado visualizações de Resumo Geral, Gráfico de Gastos por Mês e Transações recentes na página principal (dashboard)
+- **[NOVO]** Rótulo de valor total gasto no gráfico
+- **[NOVO]** Separado por componentes:
+  - [Resumo Geral](./frontend/src/components/TotalSummary.jsx)
+  - [Gráfico de gastos por mês](./frontend/src/components/MonthlyChart.jsx)
+  - [Tabela de Transações Recentes](./frontend/src/components/TransactionsTable.jsx)
+  - [Página de Boas vindas](./frontend/src/components/WelcomeTransition.jsx)
+
+### Em produção: 
+- Adicionar filtro de ano e mês na página
+- Adicionar uma linha de variação % M/M
+- Opção de exportar tabela em csv
 
 ---
 
@@ -35,12 +53,12 @@ Projeto em fase de desenvolvimento com o objetivo de criar uma aplicação web q
 ## ⚙️ Tecnologias e Dependências
 
 ### Frontend
-- [Vite](https://vitejs.dev/) + React (JavaScript)
+- [Vite](https://vitejs.dev/) + [React](https://react.dev/) (JavaScript)
 - [React Router Dom](https://reactrouter.com/)
 
 
 ### Backend
-- Node.js (Express)
+- [Node.js](https://nodejs.org/pt) (Express)
 - `dotenv` para variáveis de ambiente
 - `cors`, `crypto`, `node-fetch` para futura integração com APIs
 
@@ -95,7 +113,11 @@ node ./server/server.js
 wallet-flow/
 │
 ├── backend/
+│   ├── data/
+│   │   └─ mockTransactions.json
 │   ├── node_modules/
+│   ├── routes/
+│   │   └─ transactions.js
 │   ├── server/
 │   │   └─ index.js
 │   ├── .env
@@ -107,9 +129,6 @@ wallet-flow/
 │   ├── node_modules/
 │   ├── src/
 │   │   ├─ assets/
-│   │   │  ├─ database/
-│   │   │  │  └─ transacoes_ficticias.csv
-│   │   │  │
 │   │   │  └─ images/
 │   │   │     ├─ bg-financas.jpg
 │   │   │     ├─ carta-de-credito-control.jpg
@@ -117,16 +136,23 @@ wallet-flow/
 │   │   │     └─ mercado-pago.png
 │   │   │
 │   │   ├─ components/
+│   │   │  ├─ BackgroundLayout.jsx
+│   │   │  ├─ DashboardContent.jsx
 │   │   │  ├─ Header.jsx
 │   │   │  ├─ Login.jsx
-│   │   │  └─ Main.jsx
+│   │   │  ├─ Main.jsx
+│   │   │  ├─ MonthlyChart.jsx
+│   │   │  ├─ TotalSummary.jsx
+│   │   │  ├─ TransactionsTable.jsx
+│   │   │  └─ WelcomeTransition.jsx
 │   │   │
 │   │   ├─ context/
 │   │   │  └─ UserContext.jsx
 │   │   │
 │   │   ├─ pages/
 │   │   │  ├─ Dashboard.jsx
-│   │   │  └─ Home.jsx
+│   │   │  ├─ Home.jsx
+│   │   │  └─ Welcome.jsx
 │   │   │
 │   │   ├─ utils/
 │   │   │  └─ utils.js
@@ -143,7 +169,9 @@ wallet-flow/
 │   ├── package.json
 │   └── vite.config.js
 │
+├── .gitignore 
 ├── package-lock.json 
+├── package.json 
 └── README.md
 
 ```
