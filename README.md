@@ -21,6 +21,9 @@ Projeto em fase de desenvolvimento com o objetivo de criar uma aplicação web q
 - Criado uma conexão API no backend [Server](./backend/routes/transactions.js)
 - Consumindo a [API](./frontend//src/services/transactionsAPI.js) no frontend
 - Adicionado visualizações de Resumo Geral, Gráfico de Gastos por Mês e Transações recentes na página principal (dashboard)
+- Adicionada opção de exportação da tabela de transações em CSV.
+- Tratamento e padronização de datas e valores monetários em formato brasileiro.
+- Estilização aprimorada da seção de resumo total de gastos (`.dashboard__total`) com destaque visual.
 - **[NOVO]** Rótulo de valor total gasto no gráfico
 - **[NOVO]** Separado por componentes:
   - [Resumo Geral](./frontend/src/components/TotalSummary.jsx)
@@ -31,7 +34,6 @@ Projeto em fase de desenvolvimento com o objetivo de criar uma aplicação web q
 ### Em produção: 
 - Adicionar filtro de ano e mês na página
 - Adicionar uma linha de variação % M/M
-- Opção de exportar tabela em csv
 
 ---
 

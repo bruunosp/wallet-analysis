@@ -216,12 +216,42 @@
   font-size: 1.6rem;
   margin-bottom: 16px;
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Estilo para seções dentro da dashboard */
 .dashboard__section {
   margin-bottom: 24px;
 }
+
+.dashboard__total {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 8px 10px;
+  border-left: 5px solid #0043A6;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.dashboard__total::before {
+  content: "💳 ";
+  margin-right: 8px;
+  font-size: 1.4rem;
+}
+
+/* .dashboard__total::before {
+  content: "💰 ";
+  margin-right: 4px;
+} */
+
+
 
 /* Estilo para gráficos fictícios (exemplo) */
 .dashboard__graph-placeholder {
@@ -264,4 +294,19 @@
   background-color: #f5f5f5;
   color: #333;
   font-weight: bold;
+}
+
+.dashboard__export-button {
+  background-color: #0069a6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.dashboard__export-button:hover {
+  background-color: #003080;
 }

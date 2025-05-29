@@ -13,12 +13,6 @@ const Welcome = () => {
     const [overlayClaro, setOverlayClaro] = useState(false);                // Altera o esmaecimento para mais claro
 
     useEffect(() => {
-        // Retornar a página inicial, caso o usuário tenha expirado
-        if (!username) {
-            navigate("/");
-            return;
-        }
-        
         // Mover texto para parte superior esquerda, alterar imagem de fundo e diminuir o esmaecer após 3 segundos
         const setTimer = setTimeout(() => {
             setMoveText(true);
